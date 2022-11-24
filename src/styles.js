@@ -5,7 +5,7 @@ import { StyleSheet } from "react-native";
     container: {
       flex: 1,
       backgroundColor: "#e5e5e5",
-     
+       justifyContent:"center"
     },  
     
    

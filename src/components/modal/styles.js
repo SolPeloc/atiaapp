@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
         alignItems:"center",
         marginTop: 50,
         paddingVertical:20,
-        backgroundColor:"#dad7cd"
+        backgroundColor:"#cad2c5"
       },
       modalTitle:{
         fontSize:18,

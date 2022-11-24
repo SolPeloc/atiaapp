@@ -1,11 +1,17 @@
 
-import { StyleSheet, Text, View, TextInput, Button, FlatList, Modal, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, FlatList, Modal, TouchableOpacity, ActivityIndicator} from 'react-native';
 import { useState } from 'react';
 import { styles } from "./styles"
 import { AddItem, List, TaskItem } from './components/index.js';
 import ModalComponent from './components/modal';
-
+import { useFonts } from 'expo-font';
+import colors from "./constants/colors.js"
 export default function App() {
+  const [loaded] = useFonts({
+   "poppins-regular": require("../assets/fonts/Poppins-Regular.ttf"),
+   "poppins-bold" : require("../assets/fonts/Poppins-Bold.ttf"),
+   "poppins-italic" : require("../assets/fonts/Poppins-Italic.ttf"),
+  })
   const [task,setTask]= useState("");//estado del input, de lo que escribimos en él, entonces usamos string//
   const[ taskList, setTaskList]= useState([ ]);// estado de lista , aca el estaria el array de los inputs u objeto de los inputs//
   const [modalVisible,setmodalVisible] = useState(false); //estado de visualizacion del modal, como inicio, no se vera por eso false
@@ -36,7 +42,13 @@ export default function App() {
  
  }
  const onHandleChange = (text) => setTask(text);
-
+ if (!loaded){ 
+  return(
+     <View style={styles.container}>
+    <ActivityIndicator size="large" color={colors.primary}/>
+  </View> )
+   
+ }
   return (
     <> 
           <AddItem task={task} onHandleTask={onHandleTask} onHandleChange = {onHandleChange}/>

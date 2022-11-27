@@ -1,0 +1,1 @@
+export {default as Screen} from "../screens/screen1/index"

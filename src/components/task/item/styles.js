@@ -1,13 +1,14 @@
 import { StyleSheet } from "react-native";
+import colors from "../../../constants/colors";
 
 export const styles = StyleSheet.create({
 
     listItemContainer:{
         marginVertical:5,
         paddingVertical: 20,
-        backgroundColor: "#ffff",
+        backgroundColor: colors.white,
         borderRadius:5,
-        shadowColor: "#000",
+        shadowColor: colors.black,
         shadowOffset: {
             width: 0,
             height: 4,
@@ -19,8 +20,9 @@ export const styles = StyleSheet.create({
     }, 
     listItem:{
         fontSize:14,
-        color:"#00000",
+        color:colors.black,
         paddingHorizontal:10,
+        fontFamily: "poppins-regular"
     },
 
 })

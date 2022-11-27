@@ -1,6 +1,7 @@
 import React from "react";
 import { FlatList, View, Text } from "react-native";
 import {styles} from "../list/styles.js"
+
 const List = ({taskList,renderItem}) =>{
 
     return(
@@ -14,7 +15,7 @@ const List = ({taskList,renderItem}) =>{
                     renderItem = {renderItem} //componente a renderizar
                     keyExtractor={item => item.id} //por cada uno de los item, le paso el id
                 />
-
+                
          </View>  
     )
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { Button,Text,View, Modal} from "react-native";
+import colors from "../../constants/colors";
 import {styles} from "./styles"
 const ModalComponent = ({onHandleCancel, onHandleDeleteItem, selectedTask, modalVisible}) => {
  return (
@@ -12,13 +13,13 @@ const ModalComponent = ({onHandleCancel, onHandleDeleteItem, selectedTask, modal
                     <View style = {styles.modalButtonContainer}>
                         <Button
                         title='cancelar'
-                        color= "black"
+                        color= {colors.primary}
                         onPress= {onHandleCancel} //funcion que cancele el modal
                         
                         />
                         <Button
                             title='eliminar'
-                            color= "red"
+                            color= {colors.black}
                             onPress = {onHandleDeleteItem} //funcion que borre la tarea
                         />
                     </View>

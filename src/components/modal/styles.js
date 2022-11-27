@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import colors from "../../constants/colors";
 export const styles = StyleSheet.create({
 
 
@@ -7,11 +8,12 @@ export const styles = StyleSheet.create({
         alignItems:"center",
         marginTop: 50,
         paddingVertical:20,
-        backgroundColor:"#cad2c5"
+        backgroundColor:colors.background,
+        
       },
       modalTitle:{
         fontSize:18,
-        fontWeight: "bold",
+        fontFamily:"poppins-bold",
         marginBottom: 10,
       },
       modalDetailContainer:{
@@ -22,13 +24,13 @@ export const styles = StyleSheet.create({
       
       modalDetailText:{
         fontSize: 14,
-        color:"black"
-      
+        color:colors.black,
+        fontFamily:"poppins-regular"
       },
       selectedTask:{
        fontSize: 14,
-       color:"black",
-       fontWeight: "bold",
+       color:colors.black,
+      fontFamily:"poppins-bold",
        paddingVertical: 20,
       },
       modalButtonContainer:{

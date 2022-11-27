@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import colors from "../../../constants/colors";
 
 export  const styles = StyleSheet.create ({
 
@@ -7,9 +8,9 @@ export  const styles = StyleSheet.create ({
     },
     listTitle:{
     fontSize:18,
-    fontWeight:"bold",
+    fontFamily:"poppins-bold",
     marginBottom:10,
-    color:"#22223b"
+    color:colors.primary
 },
 
 })

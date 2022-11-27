@@ -5,6 +5,7 @@ import { styles } from "./styles"
 import { AddItem, List, TaskItem } from './components/index.js';
 import ModalComponent from './components/modal';
 import { useFonts } from 'expo-font';
+import { Screen } from './screens';
 import colors from "./constants/colors.js"
 export default function App() {
   const [loaded] = useFonts({
@@ -16,6 +17,7 @@ export default function App() {
   const[ taskList, setTaskList]= useState([ ]);// estado de lista , aca el estaria el array de los inputs u objeto de los inputs//
   const [modalVisible,setmodalVisible] = useState(false); //estado de visualizacion del modal, como inicio, no se vera por eso false
   const [selectedTask,setselectedTask] = useState(); //estado de elemento seleccionado
+
   const onHandleTask = () => {
   setTaskList((prevTaskList) => [ ...prevTaskList,{id: Math.random().toString(), value:task}]);//setear la lista, con un id unico y el valor
   setTask("");                               
@@ -49,12 +51,25 @@ export default function App() {
   </View> )
    
  }
+ const onHandleChangeScreen = () =>
+    {
+       return(
+        <Screen/>
+       )
+    }
+
+
+
   return (
-    <> 
+    < > 
           <AddItem task={task} onHandleTask={onHandleTask} onHandleChange = {onHandleChange}/>
           <List taskList={taskList} renderItem={renderItem} onHandleChange={onHandleChange}/> 
           <ModalComponent modalVisible={modalVisible} selectedTask={selectedTask} onHandleCancel={onHandleCancel} onHandleDeleteItem = {onHandleDeleteItem}/>
-                
-    </>          
+          <Button 
+              title='cambiar pantalla'
+              color={colors.black}
+              onPress= {onHandleChangeScreen}
+            />     
+  </>         
   );
 }

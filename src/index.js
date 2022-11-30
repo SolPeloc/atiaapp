@@ -1,5 +1,5 @@
 
-import { StyleSheet, Text, View, TextInput, Button, FlatList, Modal, TouchableOpacity, ActivityIndicator} from 'react-native';
+import {  View,  ActivityIndicator} from 'react-native';
 import { useState } from 'react';
 import { styles } from "./styles"
 import { AddItem, List, TaskItem } from './components/index.js';
@@ -51,25 +51,19 @@ export default function App() {
   </View> )
    
  }
- const onHandleChangeScreen = () =>
-    {
-       return(
-        <Screen/>
-       )
-    }
-
-
+ deleteAll= () =>{
+  setTaskList("")
+      
+  }
+    
+  
 
   return (
     < > 
           <AddItem task={task} onHandleTask={onHandleTask} onHandleChange = {onHandleChange}/>
-          <List taskList={taskList} renderItem={renderItem} onHandleChange={onHandleChange}/> 
+          <List taskList={taskList} renderItem={renderItem} onHandleChange={onHandleChange} deleteAll={deleteAll}/> 
           <ModalComponent modalVisible={modalVisible} selectedTask={selectedTask} onHandleCancel={onHandleCancel} onHandleDeleteItem = {onHandleDeleteItem}/>
-          <Button 
-              title='cambiar pantalla'
-              color={colors.black}
-              onPress= {onHandleChangeScreen}
-            />     
+           
   </>         
   );
 }
